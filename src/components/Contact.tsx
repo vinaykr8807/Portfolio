@@ -18,7 +18,7 @@ const Contact = () => {
       formData.append("email", form.email);
       formData.append("message", form.message);
 
-      const response = await fetch("http://localhost:8000/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         body: formData,
       });

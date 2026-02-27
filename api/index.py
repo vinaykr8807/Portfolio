@@ -25,18 +25,30 @@ app.add_middleware(
 
 # Initialize Firebase Admin for Firestore
 try:
-    key_path = "firebase-key.json"
-    if os.path.exists(key_path):
+    # On Vercel, we might pass the key as an environment variable string
+    firebase_key_env = os.getenv("FIREBASE_SERVICE_ACCOUNT")
+    if firebase_key_env:
         import json
-        with open(key_path) as f:
-            key_data = json.load(f)
-        if "\\n" in key_data["private_key"]:
+        key_data = json.loads(firebase_key_env)
+        if "\\n" in key_data.get("private_key", ""):
             key_data["private_key"] = key_data["private_key"].replace("\\n", "\n")
         cred = credentials.Certificate(key_data)
         firebase_admin.initialize_app(cred)
         db = firestore.client()
     else:
-        db = None
+        # Fallback to file search for local dev
+        key_path = "firebase-key.json"
+        if os.path.exists(key_path):
+            import json
+            with open(key_path) as f:
+                key_data = json.load(f)
+            if "\\n" in key_data["private_key"]:
+                key_data["private_key"] = key_data["private_key"].replace("\\n", "\n")
+            cred = credentials.Certificate(key_data)
+            firebase_admin.initialize_app(cred)
+            db = firestore.client()
+        else:
+            db = None
 except Exception:
     db = None
 
@@ -89,7 +101,7 @@ def get_visitor_template(name):
     </html>
     """
 
-@app.post("/send-email")
+@app.post("/api/send-email")
 async def send_email(name: str = Form(...), email: str = Form(...), message: str = Form(...)):
     sender_user = os.getenv("SMTP_EMAIL")
     password = os.getenv("SMTP_PASSWORD")
@@ -131,5 +143,6 @@ async def send_email(name: str = Form(...), email: str = Form(...), message: str
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
+# For local development
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
