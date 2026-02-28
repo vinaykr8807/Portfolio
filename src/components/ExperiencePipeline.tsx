@@ -1,37 +1,25 @@
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap, Building2, Code } from "lucide-react";
+import { GraduationCap, Building2 } from "lucide-react";
 
 const experienceData = [
     {
-        title: "AI Development Intern",
-        company: "Digital Academy (Remote)",
-        period: "July 2024 - Dec 2024",
+        title: "ML Intern",
+        company: "TheSmartBridge",
+        period: "Dec 2025 - Present",
         icon: Building2,
         description: [
-            "Engineered automated pest detection models using CNN architectures with 89% precision.",
-            "Developed an AI diagnostic bot providing real-time treatment suggestions for farmers.",
-            "Optimized training pipelines reducing model convergence time by 20% using mixed-precision training."
-        ]
-    },
-    {
-        title: "Open Source Contributor",
-        company: "GitHub Community",
-        period: "2023 - Present",
-        icon: Code,
-        description: [
-            "Contributed modular ML components to RAG-based code assistants and educational tools.",
-            "Collaborated on optimizing vector search performance for FAISS-based document retrieval.",
-            "Refined API documentation for high-performance Python backends."
+            "Developed and evaluated various ML and DL models.",
+            "Developed REST APIs using FastAPI.",
+            "Worked on Generative AI projects using LLMs such as Gemini, Llama 3."
         ]
     },
     {
         title: "B.Tech in Computer Science",
-        company: "S.R Group of Institutions, Jhansi",
-        period: "2021 - 2025",
+        company: "K.R Mangalam University, Gurgaon",
+        period: "2022 - 2026",
         icon: GraduationCap,
         description: [
-            "Specializing in Artificial Intelligence and Machine Learning with a focused curriculum on Neural Networks.",
-            "Led the Technical Society in hosting regional hackathons and seminars on LLM integrations.",
+            "Specialized in B.Tech CSE.",
             "Achieved top-tier grades in core algorithms and data structure modules."
         ]
     }
