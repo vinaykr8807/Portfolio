@@ -3,11 +3,63 @@ import { useRef, useState, useEffect } from "react";
 import { ExternalLink, Github, X, Info, Layers, Cpu } from "lucide-react";
 
 import agriguardImg from "@/assets/project-agriguard.jpg";
-import genaiImg from "@/assets/project-genai.jpg";
-import emotionImg from "@/assets/project-emotion.jpg";
-import codexImg from "@/assets/project-codex.jpg";
+import chronosImg from "@/assets/project-chronos.webp";
+import codegraphImg from "@/assets/project-codegraph.webp";
+import crmImg from "@/assets/project-crm.webp";
+import eduzyniqImg from "@/assets/project-eduzyniq.webp";
+import proctorImg from "@/assets/project-proctor.webp";
 
 const projects = [
+  {
+    id: "chronos",
+    title: "Chronos AI",
+    subtitle: "Autonomous Time-Series Intelligence",
+    description: "End-to-end autonomous ML platform for dataset discovery, automated EDA, adaptive forecasting pipelines, and model monitoring from a React + FastAPI workspace.",
+    details: "Chronos AI unifies semantic dataset discovery, automated dataframe intelligence, evidence-gated explanations, and adaptive model selection across ARIMA, XGBoost, RandomForest, SVM, and LSTM. It uses LangGraph-style orchestration, FAISS-backed evidence retrieval, Server-Sent Events for live pipeline progress, forecasting dashboards with prediction intervals, and monitoring views for model KPIs, drift, alerts, and recent runs.",
+    stack: ["React", "FastAPI", "LangGraph", "FAISS", "XGBoost", "ARIMA", "LSTM", "Recharts"],
+    github: "https://github.com/vinaykr8807/Chronos-AI---Autonomous-Time-Series-Intelligence-System",
+    image: chronosImg,
+  },
+  {
+    id: "codegraph",
+    title: "CodeGraph AI",
+    subtitle: "Repository Architecture Explorer",
+    description: "AI-powered codebase explorer that converts GitHub repositories into synchronized tree, flow, graph, explanation, and Ask-the-Codebase views.",
+    details: "CodeGraph AI combines GitHub ingestion, README-aware analysis, deterministic static parsing, Neo4j graph relationships, Redis caching, and FAISS semantic search. It extracts files, functions, classes, imports, datasets, and libraries, then supports visual architecture exploration and RAG-style codebase Q&A with Gemini or Groq fallback behavior.",
+    stack: ["FastAPI", "Neo4j", "Redis", "FAISS", "Gemini", "Groq", "GitHub API", "JavaScript"],
+    github: "https://github.com/vinaykr8807/CodeGraph-AI",
+    image: codegraphImg,
+  },
+  {
+    id: "adaptive-crm",
+    title: "Adaptive RAG CRM",
+    subtitle: "Agentic Business Intelligence",
+    description: "Enterprise CRM for the Indian market with an Adaptive RAG intelligence hub, intent routing, sales analytics, support intelligence, and churn-risk scoring.",
+    details: "This CRM embeds an agentic AI core powered by Groq, Llama 3, LangGraph, and Adaptive RAG. Its intelligence hub routes user queries to specialized agents for SQL sales analysis, FAISS support retrieval, live market intelligence through Tavily or Serper, and final response synthesis. The product also includes a dynamic deal pipeline Kanban board, contextual page summaries, and predictive churn risk scoring.",
+    stack: ["FastAPI", "LangGraph", "LangChain", "Groq", "Llama 3", "FAISS", "SQLite", "Redis"],
+    github: "https://github.com/vinaykr8807/Adaptive-RAG-Based-Agentic-AI-CRM-System",
+    image: crmImg,
+  },
+  {
+    id: "eduzyniq",
+    title: "EduZyniq",
+    subtitle: "AI Learning & Career Platform",
+    description: "AI-assisted education platform combining interview coaching, adaptive quizzes, coding mentorship, career pathfinding, teacher tools, and admin analytics.",
+    details: "EduZyniq is a React + FastAPI + Supabase platform with specialized learning modules for resume analysis, readiness scoring, adaptive quiz generation, topic mastery tracking, sandboxed code execution, AI optimization feedback, career matching, generated notes, PDF exports, and student performance monitoring. Its backend integrates Groq, FAISS, Supabase storage, OCR tooling, and optional Docker execution for safer coding workflows.",
+    stack: ["React", "TypeScript", "FastAPI", "Supabase", "Groq", "FAISS", "Docker", "ReportLab"],
+    github: "https://github.com/vinaykr8807/EduZyniq",
+    image: eduzyniqImg,
+  },
+  {
+    id: "proctor",
+    title: "ExamEye Shield",
+    subtitle: "AI Exam Proctoring System",
+    description: "Real-time online exam proctoring platform with student/admin apps, WebSocket monitoring, violation detection, evidence snapshots, and analytics.",
+    details: "ExamEye Shield uses React, Supabase, and a FastAPI computer-vision backend to monitor remote exams in real time. It combines MediaPipe head-pose tracking, YOLOv8 object detection, multiple-face and no-person detection, audio noise monitoring, tab-switch/copy-paste tracking, WebSocket alerts, Supabase evidence storage, live admin dashboards, and PDF/CSV reporting.",
+    stack: ["React", "FastAPI", "YOLOv8", "MediaPipe", "OpenCV", "WebSocket", "Supabase", "TensorFlow.js"],
+    github: "https://github.com/vinaykr8807/Proctor-",
+    image: proctorImg,
+  },
   {
     id: "agriguard",
     title: "AgriGuard AI",
@@ -17,36 +69,6 @@ const projects = [
     stack: ["Python", "Streamlit", "T5-PEFT", "Climate-LoRA", "Groq API", "OpenMeteo", "Plotly", "Hugging Face"],
     github: "https://github.com/vinaykr8807/AgriGuard-AI-Climate-Smart-Advisory-System",
     image: agriguardImg,
-  },
-  {
-    id: "genai",
-    title: "GenAI Enterprise Intelligence",
-    subtitle: "Multi-Functional AI Assistant",
-    description: "Enterprise AI platform integrating RAG pipelines and local LLMs to automate business functions across analytics, support, and compliance.",
-    details: "This system features domain-specific intelligence with intent detection and a hybrid RAG pipeline (vector search + TF-IDF) indexing 44,000+ documents. It uses Ollama for local LLM deployment (Gemma 3) to ensure data privacy while providing real-time data analysis, marketing content generation, and operational decision support through a Streamlit interface.",
-    stack: ["Python", "Streamlit", "Ollama", "Gemma 3", "FAISS", "RAG", "FastAPI"],
-    github: "https://github.com/vinaykr8807/GenAI-Multi-Functional-Enterprise-Intelligence-Assistant",
-    image: genaiImg,
-  },
-  {
-    id: "emotion",
-    title: "Emotion-Aware Learning Assistant",
-    subtitle: "Dual-Neural Emotion Intelligence",
-    description: "AI-powered learning companion that detects student emotions and provides personalized educational responses using dual neural networks (BiLSTM + BERT) with Gemini AI integration.",
-    details: "This system features a sophisticated dual-model architecture combining BiLSTM for sequential processing and BERT for attention-based classification, achieving 94.2% accuracy. It classifies 5 emotions (Bored, Confident, Confused, Curious, Frustrated) and supports mixed sentiment detection. Integrated with Gemini 2.5 Flash for contextual learning support, it includes real-time analytics and a FastAPI backend for scalability.",
-    stack: ["Python", "Streamlit", "TensorFlow", "Transformers", "BERT", "Gemini AI", "FastAPI"],
-    github: "https://github.com/vinaykr8807/emotion-aware-learning-assistant",
-    image: emotionImg,
-  },
-  {
-    id: "codex",
-    title: "CodeX Intelligence Hub",
-    subtitle: "Autonomous AI Intelligence",
-    description: "Enterprise-grade AI ecosystem acting as an autonomous intelligence layer, bridging the gap between static documentation and real-time code execution.",
-    details: "CodeX leverages a high-availability RAG pipeline with FAISS and Groq for sub-second retrieval. It features Neural Code Search for semantic intent, a Polyglot Bridge for legacy code modernization, and Deep-RAG Bug Intelligence cross-referencing 277,000+ patterns. Includes a secure isolated sandbox for real-time snippet execution and validation.",
-    stack: ["Python", "FAISS", "Groq", "RAG", "Neural-Search", "Deep-Logic", "Streamlit"],
-    github: "https://github.com/vinaykr8807/Code-snippet-recommender",
-    image: codexImg,
   },
 ];
 
