@@ -58,7 +58,7 @@ const Hero = () => {
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
-              href="https://drive.google.com/file/d/1dSqXs4cFj8dmaNZ6QTCoNmNmZs80NTf6/view?usp=sharing"
+              href="https://drive.google.com/file/d/1p1-xAf6JSMaPt44QFV3PIfeYqfCtQ4WI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-medium flex items-center gap-2 hover:opacity-90 transition-opacity"
