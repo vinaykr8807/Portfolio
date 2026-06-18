@@ -24,7 +24,7 @@ const Resume = () => {
           </p>
 
           <motion.a
-            href="https://drive.google.com/file/d/1dSqXs4cFj8dmaNZ6QTCoNmNmZs80NTf6/view?usp=sharing"
+            href="https://drive.google.com/file/d/1p1-xAf6JSMaPt44QFV3PIfeYqfCtQ4WI/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
