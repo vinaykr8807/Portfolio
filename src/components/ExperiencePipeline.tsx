@@ -8,9 +8,8 @@ const experienceData = [
         period: "Dec 2025 - Present",
         icon: Building2,
         description: [
-            "Developed and evaluated various ML and DL models.",
-            "Developed REST APIs using FastAPI.",
-            "Worked on Generative AI projects using LLMs such as Gemini, Llama 3."
+            "Engineered AI-driven content generation features for the SkillWallet platform, automating notes creation, quiz generation,and image generation to improve learner engagement.",
+            "Designed an AI interview coaching prototype for Eduzniq, delivering personalized mock interviews and real-time feedback through conversational AI workflows."
         ]
     },
     {
